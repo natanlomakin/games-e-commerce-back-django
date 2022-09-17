@@ -1,12 +1,10 @@
 from dataclasses import fields
 from pyexpat import model
 from rest_framework import serializers
-from .models import Wishlist
+from .models import PaymentMethod
 
-class WishlistSerializer(serializers.ModelSerializer):
 
-    
-
+class PaymentSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Wishlist
+        model = PaymentMethod
         fields = '__all__'

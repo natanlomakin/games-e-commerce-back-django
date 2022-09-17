@@ -3,11 +3,9 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('getuserwishlist/', views.showUserWishlistGames),
+    path('getuserwishlist/', views.getUserWishlistGames),
     path('addtouserwishlist/', views.addGameToUserWishlist),
-    path('deltefromuserwishlist/', views.deleteGameFromUserWishlist),
-
+    path('deltefromuserwishlist/<pk>', views.deleteGameFromUserWishlist),
+    path('updateuserwishlist/<pk>', views.updateUserWishlist),
 
 ]
-
-

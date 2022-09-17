@@ -1,12 +1,10 @@
 from dataclasses import fields
 from pyexpat import model
 from rest_framework import serializers
-from .models import Wishlist
+from .models import Order
 
-class WishlistSerializer(serializers.ModelSerializer):
 
-    
-
+class OrderSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Wishlist
+        model = Order
         fields = '__all__'

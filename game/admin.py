@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Game, gameSpecifications, gameImages
+from .models import Game, GameSpecifications, GameImages
 
 admin.site.register(Game)
-admin.site.register(gameSpecifications)
-admin.site.register(gameImages)
+admin.site.register(GameSpecifications)
+admin.site.register(GameImages)
