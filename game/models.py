@@ -9,6 +9,7 @@ class Game(models.Model):
     publisher = models.CharField(max_length=50, null=True, blank=True)
     developer = models.CharField(max_length=50, null=True, blank=True)
     platform = models.CharField(max_length=50, null=True, blank=True)
+    genre = models.CharField(max_length=50, null=True, blank=True)
     imageOne = models.ImageField(
         null=True, blank=True, default='images/placeholder.png', upload_to='images/')
     imageTwo = models.ImageField(
