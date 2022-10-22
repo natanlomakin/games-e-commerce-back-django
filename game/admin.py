@@ -1,6 +1,4 @@
 from django.contrib import admin
-from .models import Game, GameSpecifications, GameImages
+from .models import Game
 
 admin.site.register(Game)
-admin.site.register(GameSpecifications)
-admin.site.register(GameImages)

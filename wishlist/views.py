@@ -25,9 +25,9 @@ def getUserWishlistGames(request, pk=-1):
 @api_view(['DELETE'])
 @permission_classes([IsAuthenticated])
 def deleteGameFromUserWishlist(request, pk=-1):
-    wishlistGame = Wishlist.objects.filter(user=request.user, _id=pk)
+    wishlistGame = Wishlist.objects.filter(user=request.user.id, game=pk)
     wishlistGame.delete()
-    return Response(status=status.HTTP_202_ACCEPTED)
+    return Response(status=status.HTTP_200_OK)
 
 
 @api_view(['POST'])

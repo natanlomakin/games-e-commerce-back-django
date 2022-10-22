@@ -6,8 +6,8 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from django.contrib.auth.models import User
-from .serializers import GameSerializer, GameImagesSerializer, GameSpecificationsSerializer
-from .models import Game, GameImages, GameSpecifications
+from .serializers import GameSerializer
+from .models import Game
 
 
 @api_view(['GET'])
@@ -19,6 +19,6 @@ def getAllTheGames(request):
 
 @api_view(['GET'])
 def getSingleGame(request, pk=-1):
-    singleGame = Game.objects.get(_id=pk)
-    serializer = GameSerializer(singleGame, many=False)
+    game = Game.objects.get(_id = pk)
+    serializer = GameSerializer(game, many=False)
     return Response(serializer.data)

@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-class profile(models.Model):
+class Profile(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     profilePicture = models.ImageField(
         null=True, blank=True, default='images/placeholder.png', upload_to='images/')

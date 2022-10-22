@@ -23,7 +23,7 @@ urlpatterns = [
     path('cart/', include('cart.urls')),
     path('game/', include('game.urls')),
     path('order/', include('order.urls')),
-    path('userProfile/', include('userProfile.urls')),
+    path('userprofile/', include('userProfile.urls')),
     path('login/', include('login.urls')),
     path('register/', include('register.urls')),
     path('wishlist/', include('wishlist.urls')),

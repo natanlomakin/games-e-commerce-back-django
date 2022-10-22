@@ -20,15 +20,14 @@ def getUserCartGames(request):
 @api_view(['DELETE'])
 @permission_classes([IsAuthenticated])
 def deleteGameFromUsersCart(request, pk=-1):
-    cartGame = Cart.objects.filter(user=request.user, _id=pk)
+    cartGame = Cart.objects.filter(user=request.user.id, game=pk)
     cartGame.delete()
-    return Response(status=status.HTTP_202_ACCEPTED)
+    return Response(status=status.HTTP_200_OK)
 
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def addGameToUserCart(request):
-    print(request.data)
     serializer = CartSerializer(data=request.data)
     if serializer.is_valid():
         serializer.save()
