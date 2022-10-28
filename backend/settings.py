@@ -29,6 +29,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+CSRF_TRUSTED_ORIGINS = ["https://1up.up.railway.app/","https://*.1up.up.railway.app/"]
+
+CSRF_COOKIE_SECURE=False
 
 # Application definition
 
