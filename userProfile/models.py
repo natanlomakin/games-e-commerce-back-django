@@ -12,7 +12,7 @@ class Profile(models.Model):
     zipCode = models.CharField(max_length=50, null=True, blank=True)
     dateOfBirth = models.CharField(max_length=50, null=True, blank=True)
     _id = models.AutoField(primary_key=True, editable=False)
-    fields = ['_id']
+    fields = ['_id','user','profilePicture','country','city','street','zipCode','dateOfBirth']
 
     def __str__(self):
         return str(self._id)

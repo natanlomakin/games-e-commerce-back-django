@@ -18,3 +18,10 @@ def getSingleGame(request, pk=-1):
     game = Game.objects.get(_id = pk)
     serializer = GameSerializer(game, many=False)
     return Response(serializer.data)
+
+@api_view(['GET'])
+def getGameBySearch(request, searchTitle = ""):
+    print(searchTitle.title())
+    game = Game.objects.filter(title__contains = searchTitle.title())
+    serializer = GameSerializer(game, many=True)
+    return Response(serializer.data)
