@@ -29,9 +29,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-CSRF_TRUSTED_ORIGINS = ["https://1up.up.railway.app/","https://*.1up.up.railway.app/"]
+CSRF_TRUSTED_ORIGINS = ["https://1up.up.railway.app/",
+                        "https://*.1up.up.railway.app/"]
 
-CSRF_COOKIE_SECURE=False
+CSRF_COOKIE_SECURE = False
 
 # Application definition
 
@@ -63,10 +64,10 @@ REST_FRAMEWORK = {
 }
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=120),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=90),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=45),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=2),
     'ROTATE_REFRESH_TOKENS': True,
-    'BLACKLIST_AFTER_ROTATION': True,
+    'BLACKLIST_AFTER_ROTATION': False,
     'UPDATE_LAST_LOGIN': False,
     'ALGORITHM': 'HS256',
     'VERIFYING_KEY': None,
