@@ -9,7 +9,7 @@ from .models import Order
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
-def getUserOrder(request):
+def getUserOrders(request):
     """
     It takes the user's request, finds the user's order, serializes the order, and returns the
     serialized data
@@ -18,11 +18,19 @@ def getUserOrder(request):
     metadata about the request, including the HTTP method and the parameters included in the request
     :return: A list of all the orders for the user.
     """
-    userOrder = Order.objects.filter(user=request.user)
+    userOrders = Order.objects.filter(user=request.user)
     serilizer = OrderSerializer(
-        userOrder, many=True)
+        userOrders, many=True)
     return Response(serilizer.data)
 
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def getUserSingleOrder(request, pk= -1):
+    userOrder = Order.objects.get(_id=pk)
+    serilizer = OrderSerializer(
+        userOrder, many=False)
+    print(serilizer.data)
+    return Response(serilizer.data)
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
