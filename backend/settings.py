@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 from datetime import timedelta
 import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -30,7 +31,8 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 CSRF_TRUSTED_ORIGINS = ["https://1up.up.railway.app/",
-                        "https://*.1up.up.railway.app/"]
+                        "https://*.1up.up.railway.app/",
+                        "https://render.com/"]
 
 CSRF_COOKIE_SECURE = False
 
@@ -125,19 +127,11 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-
-        'NAME': 'railway',
-
-        'USER': 'postgres',
-
-        'PASSWORD': '2BkMUlJmREHefNzO34v0',
-
-        'HOST': 'containers-us-west-98.railway.app',
-
-        'PORT': '6136',
-    }
+    'default': dj_database_url.config(
+        # Feel free to alter this value to suit your needs.
+        default='postgres://oneup_postgresdb_user:NXmyHdsyW2t8tu3NoYQ0lletnQhZc6i3@dpg-cjq9psm1208c739nfa10-a.oregon-postgres.render.com/oneup_postgresdb',
+        conn_max_age=600
+    )
 }
 
 
