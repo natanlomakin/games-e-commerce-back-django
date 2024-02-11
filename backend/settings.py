@@ -129,7 +129,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         # Feel free to alter this value to suit your needs.
-        default='postgres://oneup_postgresdb_user:NXmyHdsyW2t8tu3NoYQ0lletnQhZc6i3@dpg-cjq9psm1208c739nfa10-a.oregon-postgres.render.com/oneup_postgresdb',
+        default='postgres://oneup_postgresdb_user:EzDhRh5o3wQ6Jl4asxVpj8QwJx8E2bF9@dpg-cn2cfked3nmc739cc8kg-a.frankfurt-postgres.render.com/oneup_postgresdb_v84s',
         conn_max_age=600
     )
 }
